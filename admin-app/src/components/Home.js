@@ -101,7 +101,9 @@ export const Home = () => {
             <CarDetails />
           </div>
         </div>
-        <Updates />
+        <div className="right-side">
+          <Updates />
+        </div>
       </div>
 
       <Footer />

@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
+const moment = require("moment");
 const app = express();
 
 app.use(cors());
@@ -15,6 +16,7 @@ const con = mysql.createConnection({
   user: "admin",
   password: "admin1234",
   database: "car_info",
+  timezone: "utc",
 });
 
 con.connect(function (err) {
@@ -26,18 +28,40 @@ con.connect(function (err) {
 });
 
 app.get("/updates", (req, res) => {
-  let data;
+  let updateData = [];
   con.query("SELECT * FROM car_info.toll_table;", function (error, results) {
     if (error) throw error;
-    else {
-      // console.log(results[1]);
-      data = {
-        plateNum: results[1].licenseNumber,
-        time: results[1].time_stamp,
-      };
-      // console.log(data);
-      res.send(data);
-    }
+    // console.log(results);
+    let toll_data = results;
+
+    con.query("SELECT * FROM car_info.flagDB;", function (error, results) {
+      if (error) throw error;
+      let flag_data = results;
+
+      flag_data.forEach((item) => {
+        let data = {
+          plateNum: "",
+          time: "",
+        };
+        let flag = 0;
+        console.log("flagitem:", item);
+        for (var i = 0; i < toll_data.length; i++) {
+          if (item.license_plate_no == toll_data[i].licenseNumber) {
+            flag = 1;
+            console.log("licenseno:", toll_data[i].licenseNumber);
+            data.plateNum = toll_data[i].licenseNumber;
+            data.time = moment.utc(toll_data[i].time_stamp).format("LLL");
+            break;
+          }
+        }
+        if (flag) {
+          updateData.push(data);
+        }
+      });
+
+      console.log(updateData);
+      res.send(updateData);
+    });
   });
 });
 

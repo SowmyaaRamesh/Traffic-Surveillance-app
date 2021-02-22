@@ -102,16 +102,6 @@ footer {
   margin: 50px 30px;
   flex-basis: 75%;
 }
-.updates-container {
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 25%;
-  margin: 50px 10px;
-  margin-right: 60px;
-  background-color: #6a9ca8;
-  padding: 10px;
-}
 
 .lookup {
   background-color: #6a9ca8;
@@ -119,6 +109,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
 }
 
 .form-inputs {
@@ -164,18 +155,45 @@ footer {
   margin-top: 30px;
   overflow-y: scroll;
   height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
 }
 
 /* updates */
 
+.right-side .button {
+  position: absolute;
+  right: 80px;
+  cursor: pointer;
+}
+.updates-container {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  flex-basis: 25%;
+  margin: 50px 10px;
+  margin-right: 60px;
+  background-color: #6a9ca8;
+  padding: 10px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}
+
 .update {
   background-color: #fff;
-  max-height: 80px;
   border-radius: 5px;
-  padding: 5px;
+  /* padding: 15px; */
   margin: 10px 0;
 }
 
+.update p {
+  padding: 10px;
+}
+
+.update :hover {
+  background-color: #99bcc7;
+  border-radius: 5px;
+}
 /* car details */
 
 .table {

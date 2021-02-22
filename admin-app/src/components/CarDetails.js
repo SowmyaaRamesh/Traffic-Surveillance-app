@@ -4,6 +4,13 @@ import axios from "axios";
 export const CarDetails = () => {
   const [details, setDetails] = useState([]);
   var parameters;
+
+  const [toggle, setToggle] = useState(0);
+
+  // setInterval(() => {
+  //   setToggle(toggle ? 0 : 1);
+  // }, 3000);
+
   useEffect(() => {
     getParams(); //get input form parameters for filtering
     getDetails();
