@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
+import camera from "../assets/images/camera.jpg";
+
 export const Login = () => {
   const [credentials, setCredentials] = useState({
     username: "",
@@ -27,11 +29,12 @@ export const Login = () => {
 
   return (
     <div>
-      <Header display={0} />
-      <div className="form">
+      {/* <Header display={0} /> */}
+      <div className="background w-full h-screen z-0 absolute"></div>
+
+      <div className="form z-10 absolute">
+        <img className="" src={camera} alt="highway" width="500px"></img>
         <form className="login-form">
-          <label htmlFor="username">Username</label>
-          <br />
           <input
             type="text"
             name="username"
@@ -40,10 +43,10 @@ export const Login = () => {
               setCredentials({ ...credentials, username: e.target.value });
             }}
             value={credentials.username}
+            placeholder="Username"
           />
           <br />
-          <label htmlFor="password">Password</label>
-          <br />
+
           <input
             type="password"
             name="password"
@@ -52,13 +55,14 @@ export const Login = () => {
               setCredentials({ ...credentials, password: e.target.value });
             }}
             value={credentials.password}
+            placeholder="Password"
           />
           <br />
           <button onClick={handleClick}>Login</button>
           <span>{errorMessage}</span>
         </form>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

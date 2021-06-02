@@ -26,28 +26,22 @@ export const Home = () => {
       .catch((err) => {
         console.log(err);
       });
-    // setPassProps(1);
+
     setLP("");
     setName("");
     setModel("");
     setColor("");
-    // setPassProps(0);
   };
 
   return (
-    <div>
-      <Header display={1} />
-
-      <h1 style={{ textAlign: "center", marginTop: "30px" }}>
-        Admin Dashboard
-      </h1>
-
-      <div className="container">
-        <div className="left-side">
+    <div className="root-container">
+      <div className="image-container">
+        <Header />
+        <div>
           <div className="lookup">
             <form onSubmit={handleSubmit} className="lookup-form">
               <div className="form-inputs">
-                <label htmlFor="licenseNumber">License Plate Number</label>
+                {/* <label htmlFor="licenseNumber">License Plate Number</label> */}
                 <input
                   type="text"
                   id="licenseNumber"
@@ -56,8 +50,9 @@ export const Home = () => {
                     setLP(e.target.value);
                   }}
                   value={lp}
+                  placeholder="License Plate Number"
                 />
-                <label htmlFor="ownerName">Owner Name</label>
+                {/* <label htmlFor="ownerName">Owner Name</label> */}
                 <input
                   type="text"
                   id="ownerName"
@@ -66,8 +61,9 @@ export const Home = () => {
                     setName(e.target.value);
                   }}
                   value={name}
+                  placeholder="Owner Name"
                 />
-                <label htmlFor="carModel">Car Model</label>
+                {/* <label htmlFor="carModel">Car Model</label> */}
                 <input
                   type="text"
                   id="carModel"
@@ -76,8 +72,9 @@ export const Home = () => {
                     setModel(e.target.value);
                   }}
                   value={model}
+                  placeholder="Car Model"
                 />
-                <label htmlFor="color">Color</label>
+                {/* <label htmlFor="color">Color</label> */}
                 <input
                   type="text"
                   id="color"
@@ -86,6 +83,7 @@ export const Home = () => {
                     setColor(e.target.value);
                   }}
                   value={color}
+                  placeholder="Color"
                 />
               </div>
 
@@ -94,19 +92,23 @@ export const Home = () => {
               </button>
             </form>
           </div>
+        </div>
+
+        <div className="container flex">
           <div className="details">
             {/* {passProps ? (
               <CarDetails lp={lp} name={name} model={model} color={color} />
             ) : null} */}
             <CarDetails />
           </div>
-        </div>
-        <div className="right-side">
-          <Updates />
-        </div>
-      </div>
 
-      <Footer />
+          <div className="right-side">
+            <Updates />
+          </div>
+        </div>
+
+        {/* <Footer /> */}
+      </div>
     </div>
   );
 };

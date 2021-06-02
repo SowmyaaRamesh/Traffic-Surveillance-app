@@ -22,9 +22,8 @@ export const Updates = () => {
   return (
     <>
       <RefreshIcon className="button" onClick={handleClick} />
-
       <div className="updates-container">
-        <h4>Flagged Vehicle Updates</h4>
+        <h2>Flagged Vehicle Updates</h2>
 
         {updates.map((update) => (
           <div className="update">
