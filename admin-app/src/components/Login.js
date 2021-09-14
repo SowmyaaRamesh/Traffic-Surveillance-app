@@ -35,6 +35,7 @@ export const Login = () => {
       <div className="form z-10 absolute">
         <img className="" src={camera} alt="highway" width="500px"></img>
         <form className="login-form">
+          <h1>Log In</h1>
           <input
             type="text"
             name="username"

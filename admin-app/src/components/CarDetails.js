@@ -2,7 +2,57 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export const CarDetails = () => {
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState([
+    {
+      car_name: "FORD FIGO",
+      license_plate_no: "TN132212",
+      owner_name: "Sowmya",
+      owner_phone_no: "9789832099",
+      owner_bank_acc_no: "1000006026132",
+    },
+    {
+      car_name: "FORD FIGO",
+      license_plate_no: "TN132212",
+      owner_name: "Sowmya",
+      owner_phone_no: "9789832099",
+      owner_bank_acc_no: "1000006026132",
+    },
+    {
+      car_name: "FORD FIGO",
+      license_plate_no: "TN132212",
+      owner_name: "Sowmya",
+      owner_phone_no: "9789832099",
+      owner_bank_acc_no: "1000006026132",
+    },
+    {
+      car_name: "FORD FIGO",
+      license_plate_no: "TN132212",
+      owner_name: "Sowmya",
+      owner_phone_no: "9789832099",
+      owner_bank_acc_no: "1000006026132",
+    },
+    {
+      car_name: "FORD FIGO",
+      license_plate_no: "TN132212",
+      owner_name: "Sowmya",
+      owner_phone_no: "9789832099",
+      owner_bank_acc_no: "1000006026132",
+    },
+    {
+      car_name: "FORD FIGO",
+      license_plate_no: "TN132212",
+      owner_name: "Sowmya",
+      owner_phone_no: "9789832099",
+      owner_bank_acc_no: "1000006026132",
+    },
+    {
+      car_name: "FORD FIGO",
+      license_plate_no: "TN132212",
+      owner_name: "Sowmya",
+      owner_phone_no: "9789832099",
+      owner_bank_acc_no: "1000006026132",
+    },
+  ]);
   var parameters;
 
   const [toggle, setToggle] = useState(0);
@@ -13,7 +63,7 @@ export const CarDetails = () => {
 
   useEffect(() => {
     getParams(); //get input form parameters for filtering
-    getDetails();
+    //getDetails();
   }, []);
 
   const getParams = async () => {
