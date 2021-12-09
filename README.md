@@ -13,4 +13,4 @@ For instance, let's say the officers flag a FORD FIGO model then all the cars ma
 
 ## Demo of the application
 
-![output gif](https://github.com/SowmyaaRamesh/Dino-Game/blob/main/dino%20gif.gif)
+![output gif](https://github.com/SowmyaaRamesh/Traffic-Surveillance-app/blob/main/output.gif)
