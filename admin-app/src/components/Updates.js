@@ -7,13 +7,7 @@ export const Updates = () => {
     getUpdates();
   }, []);
 
-  const [updates, setUpdates] = useState([
-    { plateNum: "TN1312222", time: "February 20, 2021 17:15 PM" },
-    { plateNum: "TN1312222", time: "February 20, 2021 17:15 PM" },
-    { plateNum: "TN1312222", time: "February 20, 2021 17:15 PM" },
-    { plateNum: "TN1312222", time: "February 20, 2021 17:15 PM" },
-    { plateNum: "TN1312222", time: "February 20, 2021 17:15 PM" },
-  ]);
+  const [updates, setUpdates] = useState([]);
 
   const getUpdates = async () => {
     const res = await axios.get("http://localhost:5000/updates");

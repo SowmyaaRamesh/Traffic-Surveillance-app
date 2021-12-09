@@ -12,9 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 let body;
 
 const con = mysql.createConnection({
-  host: "car-database.co12lhwitdnp.ap-south-1.rds.amazonaws.com",
+  host: "ifp-database.co12lhwitdnp.ap-south-1.rds.amazonaws.com",
   user: "admin",
-  password: "admin1234",
+  password: "ifptoll123",
   database: "car_info",
   timezone: "utc",
 });
